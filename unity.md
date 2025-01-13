@@ -3,6 +3,23 @@
 Edit-> Project Settings-> Input Manger
 里面可以找到 Axes
 在 script 里面通过 Input.GetAxis 访问相应的名称
+新版系统：
+
+在 Package Manager 中安装 Input System。
+在 Project Serring -> Player -> OtherSetting -> Active Input Handling 中选择新版系统
+
+新版的输入系统是以一个 Asset 的形式加入项目的，需要创建 Input Actions，双击 Asset 进入设置。
+
+新版input system 有不同的使用方式
+1. Componen：可以为game object添加 player input 的 Component 
+2. C# code
+    * 点击 Input Actions Asset，选择生成 C# class
+    * 创建相应的 player input action 的实例，在需要用到的地方获取handle，并且激活它 （Enable）
+    * 获取输入时，调用 player_input_action.Player.Move.ReadValue<Vector2>();
+
+### RayCast
+
+求交时可以通过 layerMask 来规定只于哪一类单位求交，在 Inspector 的 Tag 旁边设置 Layer
 
 ### Button
 ```C#
@@ -26,9 +43,7 @@ Edit-> Project Settings-> Input Manger
              buttom.transform.SetParent(transform);
          }
      }
-
-
- }
+}
 
 ```
 
@@ -70,7 +85,7 @@ public class MoveDelegate : MonoBehaviour
 
 ### 设计模式
 
-### 工厂模式
+#### 工厂模式
 
 包括使用对象池：通过预分配和重用对象，避免频繁的对象创建和销毁，从而减少垃圾回收的开销。
 ```C#
@@ -120,6 +135,10 @@ public class AbilityFactory
 ```
 
 #### 单例模式
+
+一个比较简单的做法，将 Instance 设置为 {get; private set;}
+初始化时 Instance = this;
+
 
 #### Event-Trigger
 
