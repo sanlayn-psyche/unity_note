@@ -26,6 +26,7 @@ Counter 的虚函数声明，包括 Ineract，altInteract
 ### CuttingCounter: BaseCounter
 切菜，保存 CuttingRecipeSO，通过alt交互删除 input 创建 output
 cutting progress
+发布 progress change event 信息
 
 ### ContainerCounterVisual
 绑定 Counter 的视觉组件，触发开关门动作
@@ -46,7 +47,11 @@ cutting progress
 ### CuttingRecipeSO
 模型，图标等信息，记录：KitchenObjectSO 的 input->output
 cutting progress max
-发布 progress change event 信息
+
+
+### fryingRecipeSO
+input->output
+frting progress max
 
 ### PlayerAnimation
 ？？
@@ -58,3 +63,12 @@ cutting progress max
 ### ProgressBarUI
 跟 Image 绑定在一起
 通过 progress change event 改变 image 的填充量
+
+### LookAtCamera
+控制UI始终看向镜头，或者控制 forwar 始终看向镜头
+
+### TrashCounter： BaseCounter
+删除物品
+
+### StoveCounter： BaseCounter
+
